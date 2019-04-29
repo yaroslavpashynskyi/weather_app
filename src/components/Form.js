@@ -1,11 +1,16 @@
 import React from 'react';
 
+
 class Form extends React.Component {
+
     render() {
+        const {handleOnInputChange, value, handleOnButtonClicked} = this.props;
+
         return (
             <div>
-                <input type="text" name="city" placeholder="Город" />
-                <button>Получить погоду</button>
+                <input onChange={(event) => handleOnInputChange(event.target.value)} type="text" name="city" placeholder="Город" />
+                <button onClick={() => handleOnButtonClicked()} >Получить погоду</button>
+                <div>{value}</div>
             </div>
         );
     }
